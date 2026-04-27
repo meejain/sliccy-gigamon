@@ -1,0 +1,102 @@
+/* Logo Bar block */
+.logo-bar-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+main > .section:has(.logo-bar-wrapper) {
+  margin: 0;
+}
+
+.logo-bar {
+  --logo-bar-bg: rgb(50, 60, 63);
+  --logo-bar-text: rgb(132, 138, 143);
+  --logo-bar-padding: 24px 0;
+
+  background: var(--logo-bar-bg);
+  padding: var(--logo-bar-padding);
+  overflow: hidden;
+}
+
+.logo-bar .logo-bar-heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--logo-bar-text);
+  margin: 0;
+  padding: 0 24px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  min-height: 67px;
+}
+
+.logo-bar .logo-bar-heading p {
+  margin: 0;
+}
+
+.logo-bar .logo-bar-track {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  animation: logo-bar-scroll 40s linear infinite;
+  width: max-content;
+}
+
+.logo-bar .logo-bar-track img {
+  height: 36px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+@keyframes logo-bar-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-bar .logo-bar-logos {
+  overflow: hidden;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Desktop layout: heading left, logos right */
+@media (width >= 900px) {
+  .logo-bar .logo-bar-inner {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    gap: 24px;
+  }
+
+  .logo-bar .logo-bar-heading {
+    flex: 0 0 auto;
+    padding: 0;
+    min-height: auto;
+    max-width: 180px;
+    white-space: normal;
+    line-height: 1.4;
+  }
+}
+
+/* Mobile: heading stacked above logos */
+@media (width < 900px) {
+  .logo-bar .logo-bar-heading {
+    text-align: center;
+    justify-content: center;
+    min-height: auto;
+    padding-bottom: 8px;
+  }
+
+  .logo-bar .logo-bar-track img {
+    height: 32px;
+    max-width: 100px;
+  }
+}

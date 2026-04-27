@@ -1,0 +1,149 @@
+/* Footer Links Block */
+.footer-links {
+  --footer-bg: rgb(1, 14, 17);
+  --footer-text: rgba(255, 255, 255, 0.9);
+  --footer-heading: rgb(255, 255, 255);
+  --footer-font-size: 12px;
+  --footer-heading-weight: 700;
+  --footer-link-weight: 500;
+  --footer-hr-color: rgb(91, 103, 112);
+  --footer-padding-top: 80px;
+  --footer-max-width: 1280px;
+}
+
+/* Override wrapper and section to be full-width with dark background */
+.footer-links-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+footer .footer > div {
+  max-width: 100%;
+  padding: 0;
+}
+
+footer .section {
+  margin: 0;
+}
+
+.footer-links {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  font-size: var(--footer-font-size);
+  padding: var(--footer-padding-top) 80px 40px;
+}
+
+/* Links row (first row) - the 4 columns */
+.footer-links > div:first-child {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 24px;
+  max-width: var(--footer-max-width);
+  margin: 0 auto;
+}
+
+.footer-links > div:first-child > div p {
+  margin: 0 0 8px;
+  font-weight: var(--footer-heading-weight);
+  color: var(--footer-heading);
+  font-size: var(--footer-font-size);
+  letter-spacing: 0.03px;
+}
+
+.footer-links > div:first-child > div p strong {
+  font-weight: var(--footer-heading-weight);
+}
+
+.footer-links > div:first-child > div ul {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+}
+
+.footer-links > div:first-child > div ul li {
+  margin: 0;
+  padding: 2px 0;
+  line-height: 1.8;
+}
+
+.footer-links a:any-link {
+  color: var(--footer-text);
+  text-decoration: none;
+  font-weight: var(--footer-link-weight);
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* Social + legal row (second row) */
+.footer-links > div:nth-child(2) {
+  max-width: var(--footer-max-width);
+  margin: 0 auto;
+  border-top: 1px solid var(--footer-hr-color);
+  padding-top: 32px;
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-links > div:nth-child(2) > div p {
+  margin: 0;
+}
+
+/* Copyright row (third row) */
+.footer-links > div:nth-child(3) {
+  max-width: var(--footer-max-width);
+  margin: 16px auto 0;
+}
+
+.footer-links > div:nth-child(3) p {
+  margin: 0;
+  color: var(--footer-text);
+}
+
+/* Button override — reset EDS buttons to plain links in footer */
+footer .footer-links .button-container {
+  display: inline;
+}
+
+footer .footer-links a.button:any-link {
+  background: none;
+  border: none;
+  color: var(--footer-text);
+  font-size: inherit;
+  font-weight: var(--footer-link-weight);
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  text-decoration: none;
+  white-space: normal;
+  display: inline;
+  border-radius: 0;
+}
+
+footer .footer-links a.button:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+@media (width >= 900px) {
+  .footer-links > div:first-child {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (width < 900px) {
+  .footer-links {
+    padding: 40px 24px 24px;
+  }
+
+  .footer-links > div:nth-child(2) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

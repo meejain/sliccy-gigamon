@@ -1,0 +1,74 @@
+/* announcement-bar block — sticky CTA bar */
+/* The section containing this block must be fixed at the viewport bottom */
+main > .section:has(.announcement-bar-wrapper) {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.announcement-bar-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.announcement-bar {
+  --bar-bg: transparent;
+  --bar-btn-bg: rgb(255, 108, 0);
+  --bar-btn-color: #fff;
+  --bar-height: 48px;
+
+  background: var(--bar-bg);
+  height: var(--bar-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+}
+
+.announcement-bar > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.announcement-bar > div > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .announcement-bar .button-wrapper {
+  margin: 0;
+}
+
+main .announcement-bar a.button:any-link,
+main .announcement-bar a.button.primary:any-link {
+  background: var(--bar-btn-bg);
+  color: var(--bar-btn-color);
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+main .announcement-bar a.button:any-link:hover,
+main .announcement-bar a.button.primary:any-link:hover {
+  background: rgb(230, 97, 0);
+  color: var(--bar-btn-color);
+  text-decoration: none;
+}
