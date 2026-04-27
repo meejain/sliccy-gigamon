@@ -1,0 +1,116 @@
+/* Hero block — full-width background image with text overlay */
+
+.hero-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+main > .section:first-of-type:has(.hero-wrapper) {
+  margin-top: 0;
+}
+
+.hero {
+  --hero-min-height: 800px;
+  --hero-text-color: #ffffff;
+  --hero-padding: 80px 48px;
+  --hero-content-max-width: 520px;
+
+  position: relative;
+  min-height: var(--hero-min-height);
+  display: flex;
+  align-items: center;
+  color: var(--hero-text-color);
+  overflow: hidden;
+}
+
+/* Background image (first cell of first row) */
+.hero > div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: var(--hero-min-height);
+}
+
+.hero > div > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero > div > div:first-child picture {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.hero > div > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+}
+
+/* Text content cell */
+.hero > div > div:last-child {
+  position: relative;
+  z-index: 1;
+  max-width: var(--hero-content-max-width);
+  padding: var(--hero-padding);
+}
+
+.hero h1 {
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--hero-text-color);
+  margin-top: 0;
+  margin-bottom: 12px;
+  line-height: 1.15;
+}
+
+.hero p {
+  font-size: 17px;
+  color: var(--hero-text-color);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* CTA button */
+main .hero .button-wrapper {
+  margin-top: 8px;
+}
+
+main .hero a.button:any-link {
+  display: inline-block;
+  background: #ffffff;
+  color: #ff6c00;
+  border: 2px solid #ffffff;
+  border-radius: 26px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.34px;
+  white-space: nowrap;
+}
+
+main .hero a.button:any-link:hover {
+  background: #ff6c00;
+  color: #ffffff;
+  border-color: #ff6c00;
+}
+
+@media (width < 900px) {
+  .hero {
+    --hero-min-height: 500px;
+    --hero-padding: 40px 24px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}

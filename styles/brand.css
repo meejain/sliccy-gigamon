@@ -1,0 +1,18 @@
+:root {
+  --heading-font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --body-font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --background-color: rgb(255, 255, 255);
+  --text-color: rgb(33, 37, 41);
+  --link-color: rgb(0, 71, 104);
+  --link-hover-color: rgb(0, 71, 104);
+  --section-padding: 60px 0;
+  --nav-height: 68px;
+  /* Gigamon brand colors */
+  --color-dark-navy: rgb(18, 27, 31);
+  --color-dark-teal: rgb(50, 60, 63);
+  --color-light-bg: rgb(247, 249, 255);
+  --color-primary-blue: rgb(0, 71, 104);
+  --color-accent: rgb(0, 168, 180);
+}
+
+html, body { overflow: auto !important; }
